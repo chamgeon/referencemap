@@ -118,7 +118,7 @@ class GeniusApi:
         {
             "name": song name,
             "content": list of dictionary of (lyrics, annotation, annotation source url),
-            "lyrics source": lyrics source url
+            "lyrics_source": lyrics source url
         }
         """
 
@@ -138,7 +138,7 @@ class GeniusApi:
             song_content = self._parse_song_page(song_link)
             print(f"parsed {len(song_content)} annotations\n")
 
-            output.append({"name": song_title.contents[0].strip(), "content": song_content, "lyrics source": song_link})
+            output.append({"name": song_title.contents[0].strip(), "content": song_content, "lyrics_source": song_link})
         
         return output
 

@@ -1,14 +1,17 @@
 REFERENCE_DETECTION_PROMPT_PREFIX = """
-You are an expert in music and culture with a deep understanding of cultural contexts. Your task is to analyze the provided song lyrics and their explanation to identify cultural references within them.
+You are an expert in music and culture with a deep understanding of cultural contexts. Your task is to analyze the provided song lyrics and corresponding annotations to identify cultural references within them.
 
 
 [REQUIREMENTS]
 - Your goal is to identify and list all cultural references present in the lyrics. These references can include:
     - person: Celebrities, artists, historical figures, etc.
     - group: Collectives, organizations, etc.
-    - artwork: Songs, movies, literature, etc.
+    - artwork: Songs, movies, literature, story, myth, etc.
     - event: Historical or cultural events, etc.
-- References may not always be explicitly mentioned and could require reasoning based on context.
+    - place: Cities, countries, landmarks, etc.
+    - phrase: Idioms, famous phrases, etc.
+    - brand: Brands, products, etc.
+    - other: Anything not covered by the categories above.
 - For each reference, provide a detailed description that includes:
     - An explanation of why and how the entity is referenced in the lyrics.
     - The specific part of the lyrics where the entity is referenced, if applicable.
@@ -22,7 +25,7 @@ You are an expert in music and culture with a deep understanding of cultural con
 List of
 {
     "entity": Name of the referenced entity,
-    "type": Type of the entity (one of "person", "group", "artwork", "event"),
+    "type": Type of the entity (one of "person", "group", "artwork", "event", "place", "phrase", "brand", "other"),
     "description": Detailed explanation of the reference, including specific parts of the lyrics if applicable.
 }
 

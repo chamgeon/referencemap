@@ -22,14 +22,14 @@ class Song(BaseModel):
 
 class Gpt_response(BaseModel):
     entity: str
-    type: Literal["person", "group", "artwork", "event"]
+    type: Literal["person", "group", "artwork", "event", "place", "phrase", "brand"]
     description: str
 
 
 
 class Entity(BaseModel):
     name: str
-    type: Literal["person", "group", "artwork", "event"]
+    type: Literal["person", "group", "artwork", "event", "place", "phrase", "brand"]
     id: str
 
 
